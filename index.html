@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio profesional de Andrea Rodriguez Prado, Ingeniera de Sistemas e Informática.">
+  <title>Andrea Rodriguez Prado | Portfolio</title>
+
+  <style>
+    :root {
+      --navy: #172B45;
+      --navy-light: #263F5C;
+      --gold: #B49A75;
+      --beige: #F4F1EB;
+      --white: #FFFFFF;
+      --gray: #687586;
+      --border: #E6E8EC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .language {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: var(--beige);
+      padding: 115px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.15;
+      margin: 20px 0;
+      letter-spacing: -2px;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero-description {
+      max-width: 650px;
+      color: var(--gray);
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-primary:hover { background: var(--navy-light); }
+
+    .btn-outline {
+      border: 1px solid var(--navy);
+    }
+
+    section { padding: 85px 0; }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin: 8px 0 30px;
+      letter-spacing: -.5px;
+    }
+
+    .about-text {
+      max-width: 800px;
+      color: var(--gray);
+    }
+
+    .skills {
+      background: var(--beige);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .project {
+      border-top: 3px solid var(--gold);
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--beige);
+      color: var(--navy);
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 11px;
+      margin: 15px 5px 0 0;
+    }
+
+    .education {
+      background: var(--beige);
+    }
+
+    .education-box {
+      border-left: 3px solid var(--gold);
+      padding: 5px 0 5px 25px;
+    }
+
+    .education-box p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .contact {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #D2D9E2;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      background: #102035;
+      color: #D2D9E2;
+      text-align: center;
+      padding: 22px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 750px) {
+      .nav-links { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#" class="logo">ANDREA<span>.</span></a>
+
+    <div class="nav-links">
+      <a href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="#skills" data-es="Habilidades" data-en="Skills">Habilidades</a>
+      <a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+      <a href="#education" data-es="Formación" data-en="Education">Formación</a>
+      <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+
+    <button class="language" onclick="toggleLanguage()">ES / EN</button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow"
+         data-es="PORTAFOLIO PROFESIONAL"
+         data-en="PROFESSIONAL PORTFOLIO">
+         PORTAFOLIO PROFESIONAL
+      </p>
+
+      <h1>Andrea Rodriguez<br><span>Prado.</span></h1>
+
+      <h3 data-es="Ingeniera de Sistemas e Informática"
+          data-en="Systems and Informatics Engineer">
+          Ingeniera de Sistemas e Informática
+      </h3>
+
+      <p class="hero-description"
+         data-es="Profesional orientada al desarrollo de soluciones tecnológicas, ingeniería de software, inteligencia artificial y análisis de datos. Comprometida con la innovación y la mejora continua."
+         data-en="Professional focused on technological solutions, software engineering, artificial intelligence and data analytics. Committed to innovation and continuous improvement.">
+         Profesional orientada al desarrollo de soluciones tecnológicas,
+         ingeniería de software, inteligencia artificial y análisis de datos.
+         Comprometida con la innovación y la mejora continua.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary"
+           data-es="Ver proyectos" data-en="View projects">
+           Ver proyectos
+        </a>
+        <a href="#contact" class="btn btn-outline"
+           data-es="Contactarme" data-en="Contact me">
+           Contactarme
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <p class="section-label" data-es="Perfil profesional" data-en="Professional profile">
+        Perfil profesional
+      </p>
+      <h2 data-es="Sobre mí" data-en="About me">Sobre mí</h2>
+
+      <p class="about-text"
+         data-es="Soy Ingeniera de Sistemas e Informática, con formación en desarrollo tecnológico y experiencia en funciones administrativas y de soporte. Me interesa diseñar soluciones que optimicen procesos, faciliten la gestión de información y contribuyan a una mejor toma de decisiones. Busco integrar tecnología, innovación y visión estratégica en cada proyecto."
+         data-en="I am a Systems and Informatics Engineer with a background in technology development and experience in administrative and support functions. I am interested in designing solutions that optimize processes, improve information management and support better decision-making. I aim to integrate technology, innovation and strategic thinking into every project.">
+        Soy Ingeniera de Sistemas e Informática, con formación en desarrollo
+        tecnológico y experiencia en funciones administrativas y de soporte.
+        Me interesa diseñar soluciones que optimicen procesos, faciliten la
+        gestión de información y contribuyan a una mejor toma de decisiones.
+        Busco integrar tecnología, innovación y visión estratégica en cada proyecto.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="container">
+      <p class="section-label" data-es="Conocimientos" data-en="Expertise">
+        Conocimientos
+      </p>
+      <h2 data-es="Habilidades técnicas" data-en="Technical skills">
+        Habilidades técnicas
+      </h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>01. Programming</h3>
+          <p>Java · Python · C# · PHP</p>
+        </article>
+
+        <article class="card">
+          <h3>02. Web Development</h3>
+          <p>HTML · CSS · JavaScript · WordPress</p>
+        </article>
+
+        <article class="card">
+          <h3>03. Databases</h3>
+          <p>SQL · Database Design · Data Management</p>
+        </article>
+
+        <article class="card">
+          <h3>04. Data & BI</h3>
+          <p>Data Analysis · Excel · Business Intelligence</p>
+        </article>
+
+        <article class="card">
+          <h3>05. Tools</h3>
+          <p>Git · GitHub · Microsoft Office</p>
+        </article>
+
+        <article class="card">
+          <h3>06. Technology</h3>
+          <p>Software Engineering · AI · IT Management</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <p class="section-label" data-es="Trabajo seleccionado" data-en="Selected work">
+        Trabajo seleccionado
+      </p>
+      <h2 data-es="Proyectos destacados" data-en="Featured projects">
+        Proyectos destacados
+      </h2>
+
+      <div class="grid">
+        <article class="card project">
+          <h3 data-es="Entorno educativo de realidad virtual"
+              data-en="Educational Virtual Reality Environment">
+            Entorno educativo de realidad virtual
+          </h3>
+
+          <p data-es="Proyecto académico orientado a la enseñanza de personajes de la Independencia del Perú mediante realidad virtual e inteligencia artificial."
+             data-en="Academic project focused on teaching historical figures of Peru's Independence through virtual reality and artificial intelligence.">
+            Proyecto académico orientado a la enseñanza de personajes
+            de la Independencia del Perú mediante realidad virtual e inteligencia artificial.
+          </p>
+
+          <span class="tag">Godot</span>
+          <span class="tag">Blender</span>
+          <span class="tag">AI</span>
+          <span class="tag">VR</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="education" id="education">
+    <div class="container">
+      <p class="section-label" data-es="Trayectoria académica" data-en="Academic background">
+        Trayectoria académica
+      </p>
+      <h2 data-es="Formación académica" data-en="Education">
+        Formación académica
+      </h2>
+
+      <div class="education-box">
+        <h3>Ingeniería de Sistemas e Informática</h3>
+        <p>Universidad Tecnológica del Perú (UTP)</p>
+        <p>Arequipa, Perú</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label">GET IN TOUCH</p>
+      <h2 data-es="Conectemos" data-en="Let's connect">Conectemos</h2>
+
+      <p data-es="Estoy abierta a conectar, compartir conocimientos y participar en nuevos desafíos tecnológicos."
+         data-en="I am open to connecting, sharing knowledge and participating in new technological challenges.">
+        Estoy abierta a conectar, compartir conocimientos y participar
+        en nuevos desafíos tecnológicos.
+      </p>
+
+      <a href="https://github.com/andrearodriguezp"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary">GitHub Profile ↗</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Andrea Rodriguez Prado. All rights reserved.
+</footer>
+
+<script>
+  let currentLanguage = "es";
+
+  function toggleLanguage() {
+    currentLanguage = currentLanguage === "es" ? "en" : "es";
+
+    document.documentElement.lang = currentLanguage;
+
+    document.querySelectorAll("[data-es]").forEach(element => {
+      element.textContent = element.dataset[currentLanguage];
+    });
+  }
+</script>
+
+</body>
+</html>
